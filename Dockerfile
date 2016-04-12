@@ -11,4 +11,5 @@ ENV UDP_PORTS 500,4500
 
 CMD iptables -F INPUT \
 	&& iptables -A INPUT -p tcp -i $INTERFACE -m multiport \! --dports $TCP_PORTS -j DROP \
-	&& iptables -A INPUT -p udp -i $INTERFACE -m multiport \! --dports $UDP_PORTS -j DROP
+	&& iptables -A INPUT -p udp -i $INTERFACE -m multiport \! --dports $UDP_PORTS -j DROP \
+	&& iptables -L -v -n
