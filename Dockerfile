@@ -6,7 +6,7 @@ MAINTAINER Ishi Ruy <dev@nhz.io>
 RUN apk add -U iproute2
 
 ENV IF eth0
-ENV TCP_PORTS 22,80,443,880
+ENV TCP_PORTS 22,80,443
 ENV UDP_PORTS 500,4500
 
 CMD iptables -t mangle -F \
